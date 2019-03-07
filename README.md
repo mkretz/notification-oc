@@ -25,7 +25,7 @@ oc apply -f notification-mailer-configmap.yaml
 oc apply -f notification-mailer-deployment.yml
 ```
 
-# How to clean up
+## How to clean up
 ```
 oc delete -f notification-mailer-deployment.yml
 oc delete -f notification-mailer-configmap.yaml
