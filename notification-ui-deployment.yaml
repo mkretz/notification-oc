@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notification-ui-deployment
+  labels:
+    app: notification-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: notification-ui
+  template:
+    metadata:
+      labels:
+        app: notification-ui
+    spec:
+      containers:
+        - name: notification-ui
+          image: mathiskretz/notification-ui-oc
+          ports:
+            - containerPort: 8080
