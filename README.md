@@ -4,7 +4,7 @@ An OpenShift variant of the notification app
 ## How to deploy
 
 ### Prepare configuration
-1. Create a sanbox account on [Mailgun](https://www.mailgun.com/)
+1. Create a sandbox account on [Mailgun](https://www.mailgun.com/)
 1. Fill in the mailbox url and the to-address in `notification-mailer-configmap.yaml`
 
 ### Deploy the individual components
