@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  name: react-web-app-builder
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: react-web-app-builder:latest
+  postCommit: {}
+  resources: {}
+  source:
+    git:
+      uri: https://github.com/mkretz/notification-ui-oc
+      ref: master
+    type: Git
+  strategy:
+    sourceStrategy:
+      env:
+        - name: OUTPUT_DIR
+          value: dist
+        - name: NPM_BUILD
+          value: npm run build:prd
+      from:
+        kind: ImageStreamTag
+        name: web-app-builder-runtime:latest
+      incremental: true
+    type: Source
+  triggers:
+    - github:
+        secret: <webhook-secret>
+      type: GitHub
+    - type: ConfigChange
+    - imageChange: {}
+      type: ImageChange
+status:
+  lastVersion: 0

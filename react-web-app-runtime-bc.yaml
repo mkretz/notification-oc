@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  name: react-web-app-runtime
+spec:
+  output:
+    to:
+      kind: ImageStreamTag
+      name: react-web-app-runtime:latest
+  postCommit: {}
+  resources: {}
+  source:
+    type: Image
+    images:
+      - from:
+          kind: ImageStreamTag
+          name: react-web-app-builder:latest
+        paths:
+          - destinationDir: .
+            sourcePath: /opt/app-root/output/.
+  strategy:
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: nginx-image-runtime:latest
+      incremental: true
+    type: Source
+  triggers:
+    - github:
+        secret: <webhook-secret>
+      type: GitHub
+    - type: ConfigChange
+    - type: ImageChange
+      imageChange: {}
+    - type: ImageChange
+      imageChange:
+        from:
+          kind: ImageStreamTag
+          name: react-web-app-builder:latest
+status:
+  lastVersion: 0
