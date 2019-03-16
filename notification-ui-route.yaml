@@ -1,0 +1,16 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    name: notification-ui
+  name: notification-ui-route
+  namespace: notification
+spec:
+  host: notification-ui-route-notification.appuiodcs1app.ch
+  port:
+    targetPort: http
+  to:
+    kind: Service
+    name: notification-ui
+    weight: 100
+  wildcardPolicy: None
