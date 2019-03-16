@@ -42,12 +42,13 @@ oc apply -f notification-ui-route.yaml
 ```
 oc apply -f nginx-image-runtime.yaml
 oc apply -f web-app-builder-runtime.yaml
-oc apply -f react-web-app-runtime.yaml
-oc apply -f react-web-app-builder.yaml
-oc apply -f react-web-app-builder-bc.yaml
-oc apply -f react-web-app-runtime-bc.yaml
-oc apply -f react-web-app-deployment.yaml
-oc apply -f react-web-app-service.yaml
+oc apply -f notification-ui-runtime.yaml
+oc apply -f notification-ui-builder.yaml
+oc apply -f notification-ui-builder-bc.yaml
+oc apply -f notification-ui-runtime-bc.yaml
+oc apply -f notification-ui-deployment-config.yaml
+oc apply -f notification-ui-service.yaml
+oc apply -f notification-ui-route.yaml
 ```
 
 
