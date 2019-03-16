@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: BuildConfig
 metadata:
-  name: react-web-app-builder
+  name: notification-ui-builder
 spec:
   output:
     to:
       kind: ImageStreamTag
-      name: react-web-app-builder:latest
+      name: notification-ui-builder:latest
   postCommit: {}
   resources: {}
   source:

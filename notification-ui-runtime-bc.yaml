@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: BuildConfig
 metadata:
-  name: react-web-app-runtime
+  name: notification-ui-runtime
 spec:
   output:
     to:
       kind: ImageStreamTag
-      name: react-web-app-runtime:latest
+      name: notification-ui-runtime:latest
   postCommit: {}
   resources: {}
   source:
@@ -14,7 +14,7 @@ spec:
     images:
       - from:
           kind: ImageStreamTag
-          name: react-web-app-builder:latest
+          name: notification-ui-builder:latest
         paths:
           - destinationDir: .
             sourcePath: /opt/app-root/output/.
@@ -36,6 +36,6 @@ spec:
       imageChange:
         from:
           kind: ImageStreamTag
-          name: react-web-app-builder:latest
+          name: notification-ui-builder:latest
 status:
   lastVersion: 0
