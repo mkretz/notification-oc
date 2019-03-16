@@ -36,7 +36,7 @@ oc apply -f notification-ui-route.yaml
 
 #### Prepare configuration
 1. generate a secret (e.g. `openssl rand -hex 8`)
-1. Fill in the secret in place of `<webhook-secret>` in `react-web-app-builder-bc.yaml` and `react-web-app-runtime-bc.yaml`
+1. Fill in the secret in place of `<webhook-secret>` in `notification-ui-builder-bc.yaml` and `notification-ui-runtime-bc.yaml`
 
 #### Deploy the image streams and builds
 ```
