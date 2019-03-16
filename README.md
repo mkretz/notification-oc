@@ -9,6 +9,7 @@ An OpenShift variant of the notification app
 
 ### Deploy the individual components
 ```
+oc apply -f notification-db-volume-claim.yaml
 oc apply -f notification-db-deployment.yml
 oc apply -f notification-db-service.yml
 
@@ -74,4 +75,5 @@ oc delete -f notification-mq-deployment.yml
 
 oc delete -f notification-db-service.yml
 oc delete -f notification-db-deployment.yml
+oc delete -f notification-db-volume-claim.yaml
 ```
