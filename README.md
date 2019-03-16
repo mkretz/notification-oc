@@ -29,6 +29,7 @@ oc apply -f notification-mailer-deployment.yml
 ```
 oc apply -f notification-ui-deployment.yaml
 oc apply -f notification-ui-service.yaml
+oc apply -f notification-ui-route.yaml
 ```
 
 ### Option 2: as an automated build triggered by a Git web hook
@@ -55,6 +56,7 @@ oc apply -f react-web-app-service.yaml
 oc delete -f notification-mailer-deployment.yml
 oc delete -f notification-mailer-configmap.yaml
 
+oc delete -f notification-ui-route.yaml
 oc delete -f notification-ui-service.yaml
 oc delete -f notification-ui-deployment.yaml
 
