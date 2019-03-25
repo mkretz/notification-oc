@@ -63,12 +63,12 @@ oc delete -f notification-ui-deployment.yaml
 
 oc delete -f nginx-image-runtime.yaml
 oc delete -f web-app-builder-runtime.yaml
-oc delete -f react-web-app-runtime.yaml
-oc delete -f react-web-app-builder.yaml
-oc delete -f react-web-app-builder-bc.yaml
-oc delete -f react-web-app-runtime-bc.yaml
-oc delete -f react-web-app-deployment.yaml
-oc delete -f react-web-app-service.yaml
+oc delete -f notification-ui-runtime.yaml
+oc delete -f notification-ui-builder.yaml
+oc delete -f notification-ui-builder-bc.yaml
+oc delete -f notification-ui-runtime-bc.yaml
+oc delete -f notification-ui-eployment.yaml
+oc delete -f notification-ui-service.yaml
 
 oc delete -f notification-api-service.yml
 oc delete -f notification-api-deployment.yaml
