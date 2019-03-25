@@ -67,7 +67,7 @@ oc delete -f notification-ui-runtime.yaml
 oc delete -f notification-ui-builder.yaml
 oc delete -f notification-ui-builder-bc.yaml
 oc delete -f notification-ui-runtime-bc.yaml
-oc delete -f notification-ui-deployment.yaml
+oc delete -f notification-ui-deployment-config.yaml
 oc delete -f notification-ui-service.yaml
 
 oc delete -f notification-api-service.yml
